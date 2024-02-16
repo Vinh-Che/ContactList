@@ -1,0 +1,30 @@
+﻿@page "{id:int}"
+@using Contact.Models;
+@model DetailsModel
+
+@{
+    ViewData["Title"] = "Contact Details";
+}
+
+<h1>Contact Details</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Contact.Id" />
+
+    <div>
+        <label asp-for="Contact.Name"></label>
+        <input asp-for="Contact.Name" />
+    </div>
+
+    <div>
+        <label asp-for="Contact.JobTitle"></label>
+        <input asp-for="Contact.JobTitle" />
+    </div>
+
+    <div>
+        <input type="submit" value="Update" />
+    </div>
+
+</form>
+
+<button onclick="window.history.back();">Go Back</button>

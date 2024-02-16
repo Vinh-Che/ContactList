@@ -1,0 +1,28 @@
+﻿@page
+@using Contact.Models;
+@model IndexModel
+@{
+    ViewData["Title"] = "Contact List";
+}
+<h1>Contact List</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Job Title</th>
+            <th>Phone Number</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in Model.Contacts)
+        {
+            <tr>
+                <td>@contact.Name</td>
+                <td>@contact.JobTitle</td>
+                <td>@contact.PhoneNumber</td>
+                <td><a asp-page="/Details" asp-route-id="@contact.Id">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
